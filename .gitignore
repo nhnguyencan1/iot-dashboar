@@ -1,1 +1,33 @@
-node_modules
+node_modules# Vendor dependencies
+vendor/
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Database config (nếu có sensitive info)
+# config/database.php
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+cache/
+
+# Uploads (nếu có)
+uploads/*
+!uploads/.gitkeep

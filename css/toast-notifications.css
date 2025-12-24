@@ -1,0 +1,248 @@
+/**
+ * Toast Notifications & Confirm Modal Styles
+ * Compatible with SB Admin 2 Theme
+ */
+
+/* ========================================
+   TOAST CONTAINER
+======================================== */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ========================================
+   TOAST NOTIFICATION BASE
+======================================== */
+.toast-notification {
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    min-width: 300px;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: auto;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.toast-notification i:first-child {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.toast-notification span {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.toast-notification .fa-times {
+    opacity: 0.7;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.toast-notification .fa-times:hover {
+    opacity: 1;
+}
+
+/* ========================================
+   TOAST TYPES
+======================================== */
+.toast-success {
+    background: #28a745;
+    border-left: 4px solid #1e7e34;
+}
+
+.toast-error {
+    background: #dc3545;
+    border-left: 4px solid #bd2130;
+}
+
+.toast-warning {
+    background: #ffc107;
+    color: #000;
+    border-left: 4px solid #e0a800;
+}
+
+.toast-info {
+    background: #17a2b8;
+    border-left: 4px solid #117a8b;
+}
+
+/* ========================================
+   TOAST ANIMATIONS
+======================================== */
+.toast-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-notification.hide {
+    transform: translateX(400px);
+    opacity: 0;
+}
+
+/* ========================================
+   CONFIRM MODAL
+======================================== */
+.confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.confirm-modal.show {
+    opacity: 1;
+}
+
+.confirm-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(0.7);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.confirm-modal.show .confirm-box {
+    transform: scale(1);
+}
+
+.confirm-box .confirm-message {
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.confirm-box .confirm-message i {
+    color: #ffc107;
+    font-size: 28px;
+    margin-top: 2px;
+}
+
+.confirm-box .confirm-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.confirm-box button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-box .btn-cancel {
+    background: #6c757d;
+    color: white;
+}
+
+.confirm-box .btn-cancel:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-box .btn-confirm {
+    background: #007bff;
+    color: white;
+}
+
+.confirm-box .btn-confirm:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.confirm-box .btn-confirm:active,
+.confirm-box .btn-cancel:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 768px) {
+    #toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .toast-notification {
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .confirm-box {
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    .confirm-box .confirm-message {
+        font-size: 14px;
+    }
+
+    .confirm-box button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (Optional)
+======================================== */
+@media (prefers-color-scheme: dark) {
+    .confirm-box {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+
+    .confirm-box .confirm-message {
+        color: #e2e8f0;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+======================================== */
+@media print {
+    #toast-container,
+    .confirm-modal {
+        display: none !important;
+    }
+}

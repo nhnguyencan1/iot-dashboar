@@ -1,0 +1,322 @@
+/* ============================================
+   SMART HOME DASHBOARD - Enhancement Styles
+   Bổ sung cho SB Admin 2 (không ghi đè nhiều)
+   ============================================ */
+
+/* === CSS Variables === */
+:root {
+    --gradient-primary: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    --gradient-success: linear-gradient(135deg, #1cc88a 0%, #13855c 100%);
+    --gradient-danger: linear-gradient(135deg, #e74a3b 0%, #be2617 100%);
+    --gradient-warning: linear-gradient(135deg, #f6c23e 0%, #dda20a 100%);
+    --gradient-info: linear-gradient(135deg, #36b9cc 0%, #258391 100%);
+    --shadow-hover: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+    --transition-fast: all 0.3s ease;
+}
+
+/* === Card Hover Effect === */
+.card {
+    transition: var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* === Sensor Cards với Icon === */
+.sensor-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.sensor-icon.icon-success { background: var(--gradient-success); }
+.sensor-icon.icon-danger { background: var(--gradient-danger); }
+.sensor-icon.icon-primary { background: var(--gradient-primary); }
+.sensor-icon.icon-warning { background: var(--gradient-warning); }
+.sensor-icon.icon-info { background: var(--gradient-info); }
+.sensor-icon.icon-secondary { background: linear-gradient(135deg, #858796 0%, #5a5c69 100%); }
+
+.sensor-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3a3b45;
+}
+
+.sensor-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+/* === Section Titles === */
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #858796;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e3e6f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: #4e73df;
+}
+
+/* === Gradient Buttons === */
+.btn-gradient-primary {
+    background: var(--gradient-primary);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+}
+
+.btn-gradient-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(78, 115, 223, 0.4);
+    color: #fff;
+}
+
+.btn-gradient-success {
+    background: var(--gradient-success);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+}
+
+.btn-gradient-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(28, 200, 138, 0.4);
+    color: #fff;
+}
+
+.btn-gradient-danger {
+    background: var(--gradient-danger);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+}
+
+.btn-gradient-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 74, 59, 0.4);
+    color: #fff;
+}
+
+/* === Card Headers với Gradient === */
+.card-header-gradient {
+    background: var(--gradient-primary);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.card-header-gradient.bg-success-gradient {
+    background: var(--gradient-success);
+}
+
+.card-header-gradient.bg-info-gradient {
+    background: var(--gradient-info);
+}
+
+/* === Camera Card === */
+.camera-card {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%) !important;
+    border: none !important;
+}
+
+.camera-card .card-header {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.camera-card .card-header h6 {
+    color: #fff !important;
+}
+
+.live-badge {
+    display: inline-block;
+    background: #e74a3b;
+    color: #fff;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 0.5rem;
+    animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.camera-feed {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.camera-feed img {
+    width: 100%;
+    display: block;
+}
+
+/* === Enhanced Form === */
+.form-label-sm {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5a5c69;
+}
+
+/* === Enhanced Table === */
+.table-enhanced thead th {
+    background: linear-gradient(135deg, #f8f9fc 0%, #eaecf4 100%);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5a5c69;
+}
+
+.table-enhanced tbody tr {
+    transition: var(--transition-fast);
+}
+
+.table-enhanced tbody tr:hover {
+    background-color: #f8f9fc;
+}
+
+/* === Enhanced List Group === */
+.list-group-enhanced .list-group-item {
+    border-left: none;
+    border-right: none;
+    transition: var(--transition-fast);
+}
+
+.list-group-enhanced .list-group-item:hover {
+    background-color: #f8f9fc;
+    transform: translateX(5px);
+}
+
+/* === Scroll Areas (override existing) === */
+.list-scroll,
+.table-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d3e2 #f8f9fc;
+}
+
+.list-scroll::-webkit-scrollbar,
+.table-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.list-scroll::-webkit-scrollbar-track,
+.table-scroll::-webkit-scrollbar-track {
+    background: #f8f9fc;
+}
+
+.list-scroll::-webkit-scrollbar-thumb,
+.table-scroll::-webkit-scrollbar-thumb {
+    background: #d1d3e2;
+    border-radius: 3px;
+}
+
+/* === Page Header === */
+.page-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3a3b45;
+    margin-bottom: 0.25rem;
+}
+
+.page-header p {
+    color: #858796;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* === Buzzer Button === */
+.btn-buzzer {
+    background: var(--gradient-danger);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+}
+
+.btn-buzzer:disabled {
+    opacity: 0.5;
+}
+
+.btn-buzzer:not(:disabled):hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(231, 74, 59, 0.4);
+    color: #fff;
+}
+
+/* === Status Badge Gradient === */
+.badge-gradient {
+    padding: 0.35rem 0.65rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.badge-gradient.success {
+    background: var(--gradient-success);
+    color: #fff;
+}
+
+/* === Footer === */
+.footer-custom {
+    text-align: center;
+    color: #858796;
+    font-size: 0.8rem;
+}
+
+/* === Sidebar Enhancement (nhẹ) === */
+.sidebar .nav-item .nav-link {
+    transition: var(--transition-fast);
+}
+
+.sidebar .nav-item .nav-link:hover {
+    transform: translateX(3px);
+}
+
+/* === Animation === */
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

@@ -9780,12 +9780,12 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+  position: static !important;
+  min-height: auto !important;
 }
 
 body {
-  height: 100%;
+  height: auto !important;
 }
 
 a:focus {
@@ -9794,12 +9794,14 @@ a:focus {
 
 #wrapper {
   display: flex;
+  min-height: 100vh;
 }
 
 #wrapper #content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   background-color: #f8f9fc;
-  width: 100%;
-  overflow-x: hidden;
 }
 
 #wrapper #content-wrapper #content {
@@ -11267,8 +11269,8 @@ form.user .btn-user {
 }
 
 footer.sticky-footer {
-  padding: 2rem 0;
   flex-shrink: 0;
+  padding: 2rem 0;
 }
 
 footer.sticky-footer .copyright {
